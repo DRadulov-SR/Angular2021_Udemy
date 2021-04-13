@@ -12,9 +12,11 @@ export class ServersComponent implements OnInit {
   serverCreationStatus: string = 'No status123';
   serverName: string = '';
   username: string = '';
+  serverCreated: boolean = false;
 
   onServerCreation()
   {
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server is created ' + this.serverName;
   }
 
