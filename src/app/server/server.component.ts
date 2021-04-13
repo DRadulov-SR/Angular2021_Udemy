@@ -14,6 +14,7 @@ export class ServerComponent {
 constructor()
 {
     this.allowNewServer = false;
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
     setTimeout(() => {
         this.allowNewServer = true;
     }, 2000);
@@ -26,5 +27,10 @@ constructor()
     onServerCreated()
     {
         this.serverCreationalStatus = 'Server is created';
+    }
+
+    getColor()
+    {
+      return this.serverStatus === 'offline' ? 'red' :'green';
     }
 }
