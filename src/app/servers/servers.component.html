@@ -1,4 +1,14 @@
-<button class="btn btn-primary" [disabled] = "!enterServer" (click) = "onServerCreation()" >Click me</button>
+<label> Server name</label>
+<!-- <input type="text" (input)= "onUpdateServerName($event)"> -->
+<input type="text" [(ngModel)] = "serverName">
 <br>
-<p>{{serverCreationStatus}}</p>
-
+<input type="text" [(ngModel)] = "username" placeholder="Enter username">
+<br>
+<button class="btn btn-primary" [disabled]= "!enterServer" (click) = "onServerCreation()">Add server</button>
+<br>
+<button class="btn btn-primary" [disabled]= "username === ''" (click)= "onUsernameBtnClick()">Username button</button>
+<!-- <p>{{ serverName }}</p> -->
+<p>{{ serverCreationStatus }}</p>
+<p>Username is  {{ username }}</p>
+<app-server></app-server>
+<app-server></app-server>

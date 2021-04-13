@@ -9,11 +9,23 @@ export class ServersComponent implements OnInit {
 
   inputValue: string = '';
   enterServer: boolean = false;
-  serverCreationStatus: string = '';
+  serverCreationStatus: string = 'No status123';
+  serverName: string = '';
+  username: string = '';
 
   onServerCreation()
   {
-    this.serverCreationStatus = 'Server is created';
+    this.serverCreationStatus = 'Server is created ' + this.serverName;
+  }
+
+  onUsernameBtnClick()
+  {
+    this.username = '';
+  }
+
+  onUpdateServerName(event: Event)
+  {
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
 
 
